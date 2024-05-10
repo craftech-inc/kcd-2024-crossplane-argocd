@@ -1,6 +1,6 @@
 application:
 
-  replicaCount: 10
+  replicaCount: 1
 
   resources:
     requests:
