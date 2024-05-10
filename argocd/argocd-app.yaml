@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kcd-crossplane
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  sources:
+  - chart: kcd-crossplane
+    repoURL: public.ecr.aws/g0f5w9v3
+    targetRevision: 0.0.1
+    helm:
+      valueFiles:
+      - $values/argocd/values.yaml
+  - repoURL: https://github.com/craftech-inc/kcd-2024-crossplane-argocd.git
+    targetRevision: HEAD
+    ref: values
+  syncPolicy: {}

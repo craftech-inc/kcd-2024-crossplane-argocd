@@ -1,0 +1,19 @@
+application:
+
+  replicaCount: 1
+
+  resources:
+    requests:
+      cpu: 200m
+      memory: 200Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+
+s3:
+  enabled: true
+  tags:
+    owner: my-team
+
+sqs:
+  enabled: false

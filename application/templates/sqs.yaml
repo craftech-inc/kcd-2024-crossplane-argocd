@@ -1,0 +1,16 @@
+{{- if .Values.sqs.enabled }}
+apiVersion: sqs.aws.upbound.io/v1beta1
+kind: Queue
+metadata:
+  name: kcd-crossplane-sqs
+spec:
+  forProvider:
+    delaySeconds: 90
+    maxMessageSize: 2048
+    messageRetentionSeconds: 86400
+    name: kcd-crossplane
+    receiveWaitTimeSeconds: 10
+    region: us-east-2
+  providerConfigRef:
+    name: aws-provider-config
+{{- end }}
