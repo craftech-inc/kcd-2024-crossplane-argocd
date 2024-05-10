@@ -16,6 +16,6 @@ spec:
       valueFiles:
       - $values/argocd/values.yaml
   - repoURL: https://github.com/craftech-inc/kcd-2024-crossplane-argocd.git
-    targetRevision: chore/test-argocd-app
+    targetRevision: HEAD
     ref: values
   syncPolicy: {}
