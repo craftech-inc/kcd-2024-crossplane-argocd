@@ -16,4 +16,4 @@ s3:
     owner: my-team
 
 sqs:
-  enabled: true
+  enabled: false
